@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Skills &amp; Projects — Ziyin Luo</title>
+<meta name="description" content="Skills and projects of Ziyin Luo: ROS 2, MoveIt 2, Gazebo, Python, C++ and SolidWorks; motion planning for a multi-axis robotic arm; English, Chinese and French.">
+<meta name="author" content="Ziyin Luo">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Skills &amp; Projects — Ziyin Luo">
+<meta property="og:description" content="Motion planning for a multi-axis robotic arm with ROS 2, MoveIt 2 and Gazebo; Python, C++, SolidWorks; English, Chinese and French.">
+<meta property="og:locale" content="en_GB">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9878;</text></svg>">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="page">
+
+  <header class="masthead">
+    <p class="site-title">
+      <a href="index.html">Ziyin Luo<span class="name-zh">罗子寅</span></a>
+    </p>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="awards.html">Awards &amp; Honours</a></li>
+        <li><a href="skills.html" aria-current="page">Skills &amp; Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <div class="page-head">
+      <h1>Skills &amp; Projects</h1>
+      <p class="subtitle">
+        Robotics is where the mathematics and the physics turn into something that moves.
+      </p>
+    </div>
+
+    <!-- ===== START OF SECTION: PROJECT ===== -->
+    <section id="project">
+      <h2>Robotics Project</h2>
+
+      <div class="entry">
+        <div class="when">2025 – 2026</div>
+        <div class="what">
+          <h3>Cartesian motion planning and simulation for a multi-axis robotic arm</h3>
+          <p class="where">
+            <span class="zh">学生课外项目</span> — student extracurricular project
+          </p>
+          <div class="detail">
+            <p>
+              The aim was to let a robot arm be commanded in the coordinates a human actually
+              cares about. The arm is a six-degree-of-freedom model — seven links and six
+              joints, defined in <strong>URDF</strong> — simulated in <strong>Gazebo</strong>
+              and driven through <code>ros2_control</code>. Using <strong>MoveIt 2</strong> I
+              converted Cartesian target poses into inverse-kinematics solutions for the joint
+              chain, generated the trajectories between them, and verified the motion in
+              simulation before it ever ran on hardware.
+            </p>
+            <p>
+              Configuring the arm meant working through the MoveIt Setup Assistant in full:
+              the self-collision matrix, the planning group, the KDL kinematics plugin as the
+              IK solver, and the two controllers that actually execute motion — a Joint
+              Trajectory Controller on the robot side and a Follow Joint Trajectory controller
+              on the MoveIt side.
+            </p>
+            <p>
+              I also benchmarked the planning pipelines rather than taking the default on
+              trust, comparing OMPL, CHOMP, STOMP, TOMP and RRT-Connect on trajectory quality
+              and planning time. The trade-off is real: the sampling-based planners return a
+              path quickly but produce jerky motion that needs smoothing, while the
+              optimisation-based ones give smooth paths at a computational cost that is hard
+              to make real-time.
+            </p>
+            <p>
+              The part I am most pleased with is the <strong>TF</strong> work. The arm does not
+              natively understand a point in space, so I used the TF library to carry a target
+              from a depth camera's coordinate frame into the robot's base frame — which is
+              what let this project link up with a separate student project using YOLO
+              detection and a depth camera to locate objects. That collaboration is where most
+              of my debugging time went: frames that disagreed with each other, and timestamps
+              that did not line up.
+            </p>
+          </div>
+          <div class="more">
+            <a href="files/moveit2-robotic-arm-report.pdf">Read the full technical report
+            (PDF, 32 pages, 1.6 MB) →</a>
+          </div>
+        </div>
+      </div>
+
+      <dl class="rows">
+        <div>
+          <dt>Focus</dt>
+          <dd>
+            Motion planning, inverse kinematics, coordinate-frame transforms, trajectory
+            simulation
+          </dd>
+        </div>
+        <div>
+          <dt>Tools</dt>
+          <dd>
+            <ul class="tag-list">
+              <li>ROS 2</li>
+              <li>MoveIt 2</li>
+              <li>Gazebo</li>
+              <li>RViz2</li>
+              <li>URDF</li>
+              <li>Docker</li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
+    </section>
+    <!-- ===== END OF SECTION ===== -->
+
+    <!-- ===== START OF SECTION: TOOLS ===== -->
+    <section id="tools">
+      <h2>Tools</h2>
+      <dl class="rows">
+        <div>
+          <dt>Programming</dt>
+          <dd>
+            <ul class="tag-list">
+              <li>Python</li>
+              <li>C++</li>
+              <li>Linux</li>
+            </ul>
+          </dd>
+        </div>
+        <div>
+          <dt>Robotics</dt>
+          <dd>
+            <ul class="tag-list">
+              <li>ROS 2</li>
+              <li>MoveIt 2</li>
+              <li>Gazebo</li>
+              <li>RViz2</li>
+              <li>URDF</li>
+              <li>Docker</li>
+            </ul>
+          </dd>
+        </div>
+        <div>
+          <dt>CAD</dt>
+          <dd>
+            <ul class="tag-list">
+              <li>SolidWorks</li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
+    </section>
+    <!-- ===== END OF SECTION ===== -->
+
+    <!-- ===== START OF SECTION: LANGUAGES ===== -->
+    <section id="languages">
+      <h2>Languages</h2>
+      <dl class="rows">
+        <div>
+          <dt>English</dt>
+          <dd>Native</dd>
+        </div>
+        <div>
+          <dt>Chinese</dt>
+          <dd>HSK 5 and HSK 6 <span class="zh">汉语水平考试六级</span></dd>
+        </div>
+        <div>
+          <dt>French</dt>
+          <dd>Second language</dd>
+        </div>
+      </dl>
+      <p class="note">
+        Having grown up in London and now studying in Beijing, I work in English and Chinese
+        day to day. French was my second language at school.
+      </p>
+    </section>
+    <!-- ===== END OF SECTION ===== -->
+
+    <!-- ===== START OF SECTION: ELSEWHERE ===== -->
+    <section id="elsewhere">
+      <h2>Elsewhere</h2>
+      <p>
+        My degrees, schools and dates are on the
+        <a href="education.html">education</a> page, and my competition results are on the
+        <a href="awards.html">awards</a> page.
+      </p>
+    </section>
+    <!-- ===== END OF SECTION ===== -->
+
+  </main>
+
+  <footer>
+    <span>Ziyin Luo <span class="zh">罗子寅</span> · Tsinghua University</span>
+    <span>Last updated November 2026</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
