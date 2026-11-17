@@ -172,6 +172,13 @@ h1 {
 
 section { margin-bottom: 2.7rem; }
 
+/* a project (or other unit) sitting under a shared section heading */
+.subsection + .subsection {
+  margin-top: 2.1rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--rule);
+}
+
 h2 {
   font-family: var(--sans);
   font-size: 0.78rem;

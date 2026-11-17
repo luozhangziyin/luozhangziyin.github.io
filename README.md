@@ -13,14 +13,35 @@ Live at: **https://luozhangziyin.github.io/**
 | `index.html` | Home — biography and current work, with brief previews of the other pages. |
 | `education.html` | Education timeline, taught skills, and languages. |
 | `awards.html` | Honours at Tsinghua, then competition results. |
-| `skills.html` | The robotics project in detail, plus tools and languages. |
+| `skills.html` | Both projects in detail, plus tools and languages. |
 | `styles.css` | Styling for every page. **Edit colours and type here, not in the HTML.** |
-| `files/` | Downloadable documents served by the site — currently the MoveIt 2 project report. |
+| `files/` | Downloadable documents served by the site — the two project PDFs. |
 | `.nojekyll` | Tells GitHub Pages to serve the files as-is instead of running Jekyll. |
 
-There is also a `_source/` folder on the computer holding my original notes and CV. It is
-**gitignored and deliberately untracked**, so it is not in this repository, not in its
-history, and not on the website. It exists only on local disk. Keep it that way.
+Two folders on the computer are **gitignored and deliberately untracked**, so they are
+not in this repository, not in its history, and not on the website:
+
+| Folder | Holds | Why excluded |
+| --- | --- | --- |
+| `_source/` | Original notes and my CV | Private |
+| `SmartCanteen/` | Working materials for the SmartCanteen project | Contains a 60 MB PowerPoint and the team's raw files |
+
+Both exist only on local disk. Keep it that way.
+
+## What is in `files/`
+
+Only two documents are published — the ones safe for anyone to see.
+
+| File | Served as |
+| --- | --- |
+| `moveit2-robotic-arm-report.pdf` | The robotics technical report, 32 pages |
+| `smartcanteen-poster-a4.pdf` | The SmartCanteen A4 poster |
+
+The rest of the SmartCanteen materials — the 40-page concept document, the slide deck
+and the team's raw notes — stay in the untracked `SmartCanteen/` folder and are **not
+published**. To publish the concept document later, copy it into `files/` first, then
+link to `files/...`; do not link straight into `SmartCanteen/`, because that folder is
+not in the repository.
 
 Everything is plain HTML and CSS. No JavaScript, no frameworks, no build step — so there
 is nothing to compile and nothing that can break on its own.

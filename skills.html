@@ -41,16 +41,113 @@
     <div class="page-head">
       <h1>Skills &amp; Projects</h1>
       <p class="subtitle">
-        Robotics is where the mathematics and the physics turn into something that moves.
+        Two projects: one that moves, and one that informs.
       </p>
     </div>
 
     <!-- ===== START OF SECTION: PROJECT ===== -->
     <section id="project">
-      <h2>Robotics Project</h2>
+      <h2>Projects</h2>
 
-      <div class="entry">
-        <div class="when">2025 – 2026</div>
+      <div class="subsection" id="smartcanteen">
+        <div class="entry">
+          <div class="when">October 2026</div>
+          <div class="what">
+            <h3>SmartCanteen — a WeChat MiniProgram for campus dining</h3>
+            <p class="where">
+              Tsinghua University Freshmen Innovation Project · team of five ·
+              <span class="zh">智慧食堂</span>
+            </p>
+            <div class="detail">
+              <p>
+                Tsinghua has so many canteens that deciding what to eat is a genuine
+                problem — especially for a new international student, who may be reading a
+                menu in a second language and has no way of knowing that a dish contains
+                peanuts until it arrives. SmartCanteen is a WeChat MiniProgram that answers
+                three questions in one place: <em>what can I eat, where do I find it, and
+                where can I sit?</em>
+              </p>
+              <p>
+                The idea I find most interesting is that this is a <strong>two-sided</strong>
+                problem. Diners cannot see what is available; canteens cannot see what is
+                wanted. Both are caused by the same missing link — the data exists, but is
+                never joined up. So the prototype serves diners with bilingual dish
+                information, ingredient and allergen filtering, and live seating availability,
+                while the same underlying data feeds an operator dashboard identifying
+                over-production and unmet demand.
+              </p>
+              <p>
+                One design decision I would defend hardest: the system distinguishes
+                <strong>"no allergen information available"</strong> from
+                <strong>"verified to be free of this allergen."</strong> For anyone with a
+                real allergy those are completely different statements, and conflating them
+                is the kind of shortcut that makes a product dangerous rather than merely
+                unhelpful.
+              </p>
+              <p>
+                The privacy design follows the same instinct. Seat occupancy is inferred from
+                an overhead camera, but the question asked of the model is only
+                <em>"is this seat taken?"</em> and never <em>"who is sitting here?"</em> —
+                no facial recognition, raw frames processed and discarded at the edge, and
+                only anonymous aggregates stored.
+              </p>
+              <p>
+                I worked on this in a team of five, building the WeChat MiniProgram in
+                <strong>WeChat Dev Tools</strong> with <strong>JavaScript</strong> on the
+                front end and <strong>Python</strong> for the detection and data side. The
+                poster below shows the working prototype.
+              </p>
+            </div>
+            <div class="more">
+              <a href="files/smartcanteen-poster-a4.pdf">Read the project poster
+              (PDF, A4, 275 KB) →</a>
+            </div>
+          </div>
+        </div>
+
+        <dl class="rows">
+          <div>
+            <dt>Focus</dt>
+            <dd>
+              Bilingual food information, dietary and allergen filtering, privacy-preserving
+              occupancy sensing, demand prediction
+            </dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd>
+              <ul class="tag-list">
+                <li>WeChat MiniProgram</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>YOLO</li>
+                <li>OpenCV</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>Team</dt>
+            <dd>
+              Five of us, from five countries — <strong>Saraf</strong> (Bangladesh),
+              <strong>Ziyin Luo</strong> (United Kingdom), <strong>Evelyna</strong>
+              (Indonesia), <strong>Sara</strong> (United Arab Emirates) and
+              <strong>Inging</strong> (Thailand).
+            </dd>
+          </div>
+          <div>
+            <dt>Event</dt>
+            <dd>Tsinghua University Freshmen Innovation Project, October 2026</dd>
+          </div>
+        </dl>
+        <p class="note">
+          A team project: the concept, the design and the prototype were produced jointly by
+          the five of us.
+        </p>
+      </div>
+
+      <div class="subsection" id="robotic-arm">
+        <div class="entry">
+          <div class="when">2025 – 2026</div>
         <div class="what">
           <h3>Cartesian motion planning and simulation for a multi-axis robotic arm</h3>
           <p class="where">
@@ -120,6 +217,7 @@
           </dd>
         </div>
       </dl>
+      </div>
     </section>
     <!-- ===== END OF SECTION ===== -->
 
@@ -133,6 +231,7 @@
             <ul class="tag-list">
               <li>Python</li>
               <li>C++</li>
+              <li>JavaScript</li>
               <li>Linux</li>
             </ul>
           </dd>
@@ -147,6 +246,15 @@
               <li>RViz2</li>
               <li>URDF</li>
               <li>Docker</li>
+            </ul>
+          </dd>
+        </div>
+        <div>
+          <dt>App platforms</dt>
+          <dd>
+            <ul class="tag-list">
+              <li>WeChat MiniProgram</li>
+              <li>WeChat Dev Tools</li>
             </ul>
           </dd>
         </div>
