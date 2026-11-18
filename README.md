@@ -16,7 +16,50 @@ Live at: **https://luozhangziyin.github.io/**
 | `skills.html` | Both projects in detail, plus tools and languages. |
 | `styles.css` | Styling for every page. **Edit colours and type here, not in the HTML.** |
 | `files/` | Downloadable documents served by the site — the two project PDFs. |
+| `sitemap.xml` | Lists the four pages so search engines find them all at once. |
+| `robots.txt` | Permits indexing and points crawlers at the sitemap. |
 | `.nojekyll` | Tells GitHub Pages to serve the files as-is instead of running Jekyll. |
+
+## Search engines
+
+Each page carries a `<link rel="canonical">`, an `og:url`, and a block of
+**structured data** (JSON-LD) at the end of `<head>`. That block states in
+machine-readable form that these pages are about a person named Ziyin Luo,
+affiliated with Tsinghua University. It is the main thing that helps a search
+engine connect this site to the *person* rather than treating it as an anonymous
+page.
+
+Two maintenance points:
+
+- **When you edit a page, update its `<lastmod>` date in `sitemap.xml`.** Stale
+  dates don't break anything, they just make the hint less useful.
+- **The JSON-LD must remain valid JSON.** It has no comments inside it, and it
+  cannot have any — a stray `//` or `/* */` makes the whole block unparseable and
+  it is then silently ignored. The explanatory note sits in an HTML comment
+  *outside* the `<script>` tag, which is safe.
+
+### Why the biographical facts live in the JSON-LD and not the sitemap
+
+A sitemap can only hold addresses. Each `<url>` entry accepts a location and a few
+optional hints (`lastmod`, `changefreq`, `priority`) — **there is no field for
+prose**, so sentences about finishing A-Levels at 14 or entering university at 16
+cannot go in `sitemap.xml`. Any text there is simply invalid and ignored.
+
+Those facts therefore live in two places instead:
+
+| Place | Purpose |
+| --- | --- |
+| The JSON-LD `description` field | The machine-readable statement of the same facts, in the Person node |
+| The visible pages (`education.html`) | What a human reads |
+
+This split is the point: the sitemap gets crawlers to the pages, and the
+structured data tells them what the pages are about. Keep the two consistent —
+if a fact changes in the page text, change it in the JSON-LD as well.
+
+To have Google actually index the site, submit
+`https://luozhangziyin.github.io/sitemap.xml` in
+[Google Search Console](https://search.google.com/search-console). A sitemap is a
+hint; Search Console is where you ask directly.
 
 Two folders on the computer are **gitignored and deliberately untracked**, so they are
 not in this repository, not in its history, and not on the website:
@@ -209,9 +252,15 @@ route would have run to 2028.
 **Mathematical Challenge years** all follow the CV and run continuously to 2026
 (Intermediate: 2022 – 2026; Senior: 2022 – 2025).
 
-## One thing left out on purpose
+## Two things left out on purpose
 
 The CV gives the 2023 BPhO Gold as "top 150". That is real but is *not* printed on the
 awards page: at that distance from the Top 50, naming a rank weakens the entry. The 2023
 result therefore appears as a plain Gold. Add the ranking back in `awards.html` if you
 want the complete progression shown.
+
+The BPhO **Round 2** entry is described as *"the national team selection stage for the
+training camp"*. Round 2 and the training camp selection are the same event — Round 2 is
+how the camp selects — so the two names are used together to make the connection clear.
+Earlier versions said "National Training Camp" on its own, which implied a separate
+achievement and was corrected.

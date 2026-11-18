@@ -1,0 +1,5 @@
+# Everything on this site is public and may be indexed.
+User-agent: *
+Allow: /
+
+Sitemap: https://luozhangziyin.github.io/sitemap.xml
