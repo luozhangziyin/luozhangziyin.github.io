@@ -80,6 +80,12 @@ strong { font-weight: 600; }
 
 .zh { font-family: var(--cjk); color: var(--ink-soft); }
 
+/* Bilingual toggle: English shows by default; Chinese replaces it when
+   lang.js sets <html data-lang="zh">. */
+.t-zh { display: none; font-family: var(--cjk); }
+html[data-lang="zh"] .t-en { display: none; }
+html[data-lang="zh"] .t-zh { display: inline; }
+
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -96,6 +102,7 @@ strong { font-weight: 600; }
 /* ---------- masthead and navigation ---------- */
 
 .masthead {
+  position: relative;
   border-bottom: 2px solid var(--ink);
   padding-bottom: 1.15rem;
   margin-bottom: 2.2rem;
@@ -149,6 +156,23 @@ strong { font-weight: 600; }
   font-weight: 600;
   border-bottom-color: var(--accent);
 }
+
+/* Language toggle button, top-right of the masthead */
+.lang-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.28rem 0.7rem;
+  cursor: pointer;
+}
+.lang-toggle:hover { border-color: var(--accent); }
 
 /* ---------- page heading ---------- */
 
@@ -240,6 +264,9 @@ p:last-child { margin-bottom: 0; }
   border-top: 1px solid var(--rule-soft);
   font-family: var(--sans);
   font-size: 0.86rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
 }
 .more a { text-decoration: none; font-weight: 600; }
 .more a:hover { text-decoration: underline; }
@@ -430,7 +457,7 @@ footer a:hover { color: var(--accent); text-decoration: underline; }
 
 @media print {
   body { padding: 0; background: #fff; font-size: 10.5pt; }
-  .nav, .skip-link { display: none; }
+  .nav, .skip-link, .lang-toggle { display: none; }
   .masthead { border-bottom-color: #000; padding-bottom: 0.6rem; margin-bottom: 1.2rem; }
   .site-title { font-size: 1.1rem; margin-bottom: 0; }
   section { margin-bottom: 1.3rem; break-inside: avoid; }

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Ziyin Luo — About</title>
+<title data-en="Ziyin Luo — About" data-zh="罗子寅 — 关于">Ziyin Luo — About</title>
 <meta name="description" content="Ziyin Luo (罗子寅) — undergraduate in Mechanical Engineering at Tsinghua University. A-Levels at 14, UKMT and BPhO olympiad awards, robotics and motion planning.">
 <meta name="author" content="Ziyin Luo">
 
@@ -21,6 +21,7 @@
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9878;</text></svg>">
 <link rel="stylesheet" href="styles.css">
+<script src="lang.js"></script>
 <!-- Structured data: says in machine-readable form that this page is about
      a person named Ziyin Luo. Edit the values below rather than deleting it. -->
 <script type="application/ld+json">
@@ -73,20 +74,24 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main"><span class="t-en">Skip to content</span><span class="t-zh">跳到正文</span></a>
 
 <div class="page">
 
   <header class="masthead">
+    <button id="lang-toggle" class="lang-toggle" type="button"
+            aria-label="Switch language / 切换语言" aria-pressed="false">
+      <span class="t-en">中文</span><span class="t-zh">EN</span>
+    </button>
     <p class="site-title">
       <a href="index.html">Ziyin Luo<span class="name-zh">罗子寅</span></a>
     </p>
     <nav class="nav" aria-label="Main">
       <ul>
-        <li><a href="index.html" aria-current="page">About</a></li>
-        <li><a href="education.html">Education</a></li>
-        <li><a href="awards.html">Awards &amp; Honours</a></li>
-        <li><a href="skills.html">Skills &amp; Projects</a></li>
+        <li><a href="index.html" aria-current="page"><span class="t-en">About</span><span class="t-zh">关于</span></a></li>
+        <li><a href="education.html"><span class="t-en">Education</span><span class="t-zh">教育</span></a></li>
+        <li><a href="awards.html"><span class="t-en">Awards &amp; Honours</span><span class="t-zh">奖项与荣誉</span></a></li>
+        <li><a href="skills.html"><span class="t-en">Skills &amp; Projects</span><span class="t-zh">技能与项目</span></a></li>
       </ul>
     </nav>
   </header>
@@ -94,152 +99,134 @@
   <main id="main">
 
     <div class="page-head">
-      <h1>About</h1>
+      <h1><span class="t-en">About</span><span class="t-zh">关于</span></h1>
       <p class="subtitle">
-        Undergraduate, Department of Mechanical Engineering, Tsinghua University
+        <span class="t-en">Undergraduate, Department of Mechanical Engineering, Tsinghua University</span>
+        <span class="t-zh">清华大学机械工程系本科生</span>
       </p>
     </div>
 
     <!-- ===== START OF SECTION: BIO ===== -->
     <section id="bio">
-      <h2>Biography</h2>
+      <h2><span class="t-en">Biography</span><span class="t-zh">个人简介</span></h2>
       <p>
-        I am an undergraduate in Mechanical Engineering at Tsinghua University, working at the
-        point where scientific theory meets engineering practice — particularly precision
-        instrumentation, measurement, and the control of physical systems.
+        <span class="t-en">I am an undergraduate in Mechanical Engineering at Tsinghua University, working at the point where scientific theory meets engineering practice — particularly precision instrumentation, measurement, and the control of physical systems.</span>
+        <span class="t-zh">我是清华大学机械工程系本科生，工作在科学理论与工程实践的交汇点——尤其是精密仪器、测量，以及物理系统的控制。</span>
       </p>
       <p>
-        I grew up in London and studied at Harris Academy Greenwich, where I sat my A-Levels
-        <strong>four years ahead of my cohort, at fourteen</strong> — A* in Mathematics, A* in
-        Physics, and A in Further Mathematics. With the qualifications already complete, I
-        skipped sixth form entirely and went straight to university. The two years I spent at
-        school in the meantime went into the UK mathematics and physics olympiad circuit, which
-        is the part of the subject I enjoy most: a problem that cannot be answered from memory
-        and has to be taken apart carefully instead.
+        <span class="t-en">I grew up in London and studied at Harris Academy Greenwich, where I sat my A-Levels <strong>four years ahead of my cohort, at fourteen</strong> — A* in Mathematics, A* in Physics, and A in Further Mathematics. With the qualifications already complete, I skipped sixth form entirely and went straight to university. The two years I spent at school in the meantime went into the UK mathematics and physics olympiad circuit, which is the part of the subject I enjoy most: a problem that cannot be answered from memory and has to be taken apart carefully instead.</span>
+        <span class="t-zh">我在伦敦长大，就读于哈里斯格林威治学院（Harris Academy Greenwich），<strong>十四岁时参加 A-Level，比同届学生提前四年</strong>完成——数学 A*、物理 A*、进阶数学 A。因为资格考试已全部完成，我直接跳过了预科阶段进入大学。此间留在中学的两年，我投入到英国数学和物理奥赛之中，这也是这门学科里我最享受的部分：一个问题无法凭记忆作答，只能耐心地把它拆解开来。</span>
       </p>
       <p>
-        Most of what I know about engineering, as opposed to physics, came from building things
-        and watching them fail in simulation. That is the appetite I brought to Tsinghua, and
-        it is what I want to keep following.
+        <span class="t-en">Most of what I know about engineering, as opposed to physics, came from building things and watching them fail in simulation. That is the appetite I brought to Tsinghua, and it is what I want to keep following.</span>
+        <span class="t-zh">我对工程（而非物理）的大部分认识，来自亲手搭建东西、并在仿真里看着它们失败。这正是我带到清华来的求知欲，也是我想一直追随的方向。</span>
       </p>
     </section>
     <!-- ===== END OF SECTION ===== -->
 
     <!-- ===== START OF SECTION: CURRENT ===== -->
     <section id="current">
-      <h2>Current Work</h2>
+      <h2><span class="t-en">Current Work</span><span class="t-zh">当前工作</span></h2>
       <p>
-        I am in the first year of my Bachelor's degree in Mechanical Engineering, and I serve
-        as Sports Monitor for my class. Tsinghua's sporting tradition —
-        <span class="zh">无体育，不清华</span> — has shaped my university life as much as the
-        academic side, and I have competed in a range of events since arriving.
+        <span class="t-en">I am in the first year of my Bachelor's degree in Mechanical Engineering, and I serve as Sports Monitor for my class. Tsinghua's sporting tradition — <span class="zh">无体育，不清华</span> — has shaped my university life as much as the academic side, and I have competed in a range of events since arriving.</span>
+        <span class="t-zh">我现在是机械工程专业本科一年级学生，同时担任班里的体育委员。清华的体育传统——无体育，不清华——和学业一样塑造了我的大学生活；入学以来，我参加了多项体育赛事。</span>
       </p>
       <p>
-        Alongside my coursework I have two projects on the go. The first is a robotics
-        project: <a href="skills.html#robotic-arm">planning and simulating the motion of a
-        multi-axis robotic arm</a> with MoveIt 2 and Gazebo. The second is
-        <a href="skills.html#smartcanteen">SmartCanteen</a>, a WeChat MiniProgram for
-        campus dining that a team of five of us entered for the Tsinghua University
-        Freshmen Innovation Project in October 2026 — bilingual menu information, dietary
-        and allergen filtering, and live seating availability, so that a new student can
-        work out what to eat and where to sit without walking the whole campus first.
+        <span class="t-en">Alongside my coursework I have three projects on the go. The first is a robotics project: <a href="skills.html#robotic-arm">planning and simulating the motion of a multi-axis robotic arm</a> with MoveIt 2 and Gazebo. The second is <a href="skills.html#smartcanteen">SmartCanteen</a>, a WeChat MiniProgram for campus dining that a team of five of us entered for the Tsinghua University Freshmen Innovation Project in October 2026. The third is <a href="skills.html#neurosync">NeuroSync</a>, a home neurological-monitoring prototype that tracks typing rhythm and mouse tremors as an early warning, entered for the Tsinghua Medical-Engineering Innovation Competition.</span>
+        <span class="t-zh">课业之外，我手头有三个项目。第一个是机器人项目：用 MoveIt 2 和 Gazebo 对<a href="skills.html#robotic-arm">多轴机械臂进行运动规划与仿真</a>。第二个是<a href="skills.html#smartcanteen">SmartCanteen（智慧食堂）</a>，一个校园餐饮微信小程序，由我们五人团队于 2026 年 10 月参加清华大学新生创新项目。第三个是<a href="skills.html#neurosync">NeuroSync</a>，一个家庭神经监测原型，通过打字节奏和鼠标震颤进行早期预警，参加了清华大学医工结合创新大赛。</span>
       </p>
     </section>
     <!-- ===== END OF SECTION ===== -->
 
     <!-- ===== START OF SECTION: EDUCATION PREVIEW ===== -->
     <section id="education-preview">
-      <h2>Education</h2>
+      <h2><span class="t-en">Education</span><span class="t-zh">教育</span></h2>
       <div class="entry">
-        <div class="when">2026 – present</div>
+        <div class="when"><span class="t-en">2026 – present</span><span class="t-zh">2026 – 至今</span></div>
         <div class="what">
-          <h3>BEng Mechanical Engineering</h3>
-          <p class="where">Tsinghua University, Beijing</p>
+          <h3><span class="t-en">BEng Mechanical Engineering</span><span class="t-zh">机械工程学士（BEng）</span></h3>
+          <p class="where"><span class="t-en">Tsinghua University, Beijing</span><span class="t-zh">清华大学，北京</span></p>
         </div>
       </div>
       <div class="entry">
-        <div class="when">2024 – 2026</div>
+        <div class="when"><span class="t-en">2024 – 2026</span><span class="t-zh">2024 – 2026</span></div>
         <div class="what">
-          <h3>Competition years</h3>
-          <p class="where">Harris Academy Greenwich, London</p>
+          <h3><span class="t-en">Competition years</span><span class="t-zh">竞赛岁月</span></h3>
+          <p class="where"><span class="t-en">Harris Academy Greenwich, London</span><span class="t-zh">哈里斯格林威治学院，伦敦</span></p>
           <p class="detail">
-            Two further years at school with no examinations left to sit, spent on olympiad
-            mathematics and physics through to the end of Year 11.
+            <span class="t-en">Two further years at school with no examinations left to sit, spent on olympiad mathematics and physics through to the end of Year 11.</span>
+            <span class="t-zh">在中学多留两年，已无考试需要参加，把时间投入到奥赛数学和物理，直到十一年级（Year 11）结束。</span>
           </p>
         </div>
       </div>
       <div class="entry">
-        <div class="when">2024</div>
+        <div class="when"><span class="t-en">2024</span><span class="t-zh">2024</span></div>
         <div class="what">
-          <h3>A-Levels, completed at 14</h3>
-          <p class="where">Harris Academy Greenwich, London</p>
+          <h3><span class="t-en">A-Levels, completed at 14</span><span class="t-zh">A-Level，十四岁完成</span></h3>
+          <p class="where"><span class="t-en">Harris Academy Greenwich, London</span><span class="t-zh">哈里斯格林威治学院，伦敦</span></p>
           <p class="detail">
-            <span class="grade">A* Mathematics</span> &nbsp;·&nbsp;
-            <span class="grade">A* Physics</span> &nbsp;·&nbsp;
-            <span class="grade">A Further Mathematics</span>
+            <span class="t-en"><span class="grade">A* Mathematics</span> &nbsp;·&nbsp; <span class="grade">A* Physics</span> &nbsp;·&nbsp; <span class="grade">A Further Mathematics</span></span>
+            <span class="t-zh"><span class="grade">数学 A*</span> &nbsp;·&nbsp; <span class="grade">物理 A*</span> &nbsp;·&nbsp; <span class="grade">进阶数学 A</span></span>
           </p>
           <p class="detail">
-            Sat four years ahead of my cohort, allowing me to skip sixth form and go straight
-            to university. Click <a href="https://www.harrisfederation.org.uk/50/harris-highlights/post/146/a-stunning-year-for-the-harris-federation-class-of-2024-as-they-collect-their-a-level-results">here</a> to see the official article.
+            <span class="t-en">Sat four years ahead of my cohort, allowing me to skip sixth form and go straight to university. Click <a href="https://www.harrisfederation.org.uk/50/harris-highlights/post/146/a-stunning-year-for-the-harris-federation-class-of-2024-as-they-collect-their-a-level-results">here</a> to see the official article.</span>
+            <span class="t-zh">比同届提前四年完成，使我能够跳过预科、直接进入大学。点击<a href="https://www.harrisfederation.org.uk/50/harris-highlights/post/146/a-stunning-year-for-the-harris-federation-class-of-2024-as-they-collect-their-a-level-results">此处</a>查看官方报道。</span>
           </p>
         </div>
       </div>
       <div class="more">
-        <a href="education.html">Full education timeline →</a>
+        <a href="education.html"><span class="t-en">Full education timeline →</span><span class="t-zh">完整教育时间线 →</span></a>
       </div>
     </section>
     <!-- ===== END OF SECTION ===== -->
 
     <!-- ===== START OF SECTION: AWARDS PREVIEW ===== -->
     <section id="awards-preview">
-      <h2>Awards &amp; Honours</h2>
+      <h2><span class="t-en">Awards &amp; Honours</span><span class="t-zh">奖项与荣誉</span></h2>
       <ul class="preview">
         <li>
-          <span class="label">British Physics Olympiad</span> —
-          <span class="grade">Top Gold</span>, national Top 50
-          <span class="years">(2025)</span>
+          <span class="t-en"><span class="label">British Physics Olympiad</span> — <span class="grade">Top Gold</span>, national Top 50 <span class="years">(2025)</span></span>
+          <span class="t-zh"><span class="label">英国物理奥赛（BPhO）</span> —— <span class="grade">Top Gold</span>，全国前 50 名 <span class="years">(2025)</span></span>
         </li>
         <li>
-          <span class="label">Silver</span> in Round 2 of both the BPhO national team
-          selection and the British Astronomy and Astrophysics Olympiad
-          <span class="years">(2025)</span>
+          <span class="t-en"><span class="label">Silver</span> in Round 2 of both the BPhO national team selection and the British Astronomy and Astrophysics Olympiad <span class="years">(2025)</span></span>
+          <span class="t-zh">在 BPhO 国家队选拔第二轮和英国天文与天体物理奥赛（BAAO）第二轮中均获得<span class="label">银牌</span> <span class="years">(2025)</span></span>
         </li>
         <li>
-          <span class="label">Honour Student</span>, 2026 International Freshmen Orientation
-          Program <span class="years">(2026)</span>
+          <span class="t-en"><span class="label">Honour Student</span>, 2026 International Freshmen Orientation Program <span class="years">(2026)</span></span>
+          <span class="t-zh">2026 年国际新生入学教育项目<span class="label">优秀学员</span> <span class="years">(2026)</span></span>
         </li>
         <li>
-          <span class="label">Second place</span>, Indoor Rowing 2000 m, Tsinghua University
-          Virtual Sports Event <span class="years">(2026)</span>
+          <span class="t-en"><span class="label">Second place</span>, Indoor Rowing 2000 m, Tsinghua University Virtual Sports Event <span class="years">(2026)</span></span>
+          <span class="t-zh">清华大学线上运动会室内划船 2000 米<span class="label">第二名</span> <span class="years">(2026)</span></span>
         </li>
       </ul>
       <div class="more">
-        <a href="awards.html">All awards and honours →</a>
+        <a href="awards.html"><span class="t-en">All awards and honours →</span><span class="t-zh">全部奖项与荣誉 →</span></a>
       </div>
     </section>
     <!-- ===== END OF SECTION ===== -->
 
     <!-- ===== START OF SECTION: INTERESTS ===== -->
     <section id="interests">
-      <h2>Beyond the Lab</h2>
+      <h2><span class="t-en">Beyond the Lab</span><span class="t-zh">实验室之外</span></h2>
       <p>
-        Sport has been a constant: distance running and calisthenics. I also play
-        music, which is the one activity I have found that reliably stops me thinking about
-        problem sets for an hour.
+        <span class="t-en">Sport has been a constant: distance running and calisthenics. I also play music, which is the one activity I have found that reliably stops me thinking about problem sets for an hour.</span>
+        <span class="t-zh">运动一直是我的习惯：长跑和自重训练。我还弹奏音乐，这是我发现唯一能让我在一小时内真正不再想习题的活动。</span>
       </p>
       <p>
-        I am most useful to anyone who wants a problem taken apart rather than answered
-        quickly.
+        <span class="t-en">I am most useful to anyone who wants a problem taken apart rather than answered quickly.</span>
+        <span class="t-zh">对于那些想把问题拆解清楚、而不是急着得到答案的人，我最能帮上忙。</span>
       </p>
     </section>
     <!-- ===== END OF SECTION ===== -->
 
     <!-- ===== START OF SECTION: CONTACT ===== -->
     <section id="contact">
-      <h2>Contact</h2>
+      <h2><span class="t-en">Contact</span><span class="t-zh">联系方式</span></h2>
       <p>
-        Email is the surest way to reach me. I am glad to hear from anyone working on
-        robotics, instrumentation, or anything at the physics–engineering boundary.
+        <span class="t-en">Email is the surest way to reach me. I am glad to hear from anyone working on robotics, instrumentation, or anything at the physics–engineering boundary.</span>
+        <span class="t-zh">电子邮件是联系我最可靠的方式。我很乐意收到来自机器人、仪器，或任何物理与工程交叉领域同行的来信。</span>
       </p>
       <address>
         <a href="mailto:ziyin.luo@outlook.com">ziyin.luo@outlook.com</a>
@@ -250,8 +237,8 @@
   </main>
 
   <footer>
-    <span>Ziyin Luo <span class="zh">罗子寅</span> · Tsinghua University</span>
-    <span>Last updated November 2026</span>
+    <span>Ziyin Luo <span class="zh">罗子寅</span> · <span class="t-en">Tsinghua University</span><span class="t-zh">清华大学</span></span>
+    <span><span class="t-en">Last updated November 2026</span><span class="t-zh">最近更新：2026 年 11 月</span></span>
   </footer>
 
 </div>

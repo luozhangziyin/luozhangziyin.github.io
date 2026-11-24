@@ -13,10 +13,12 @@ Live at: **https://luozhangziyin.github.io/**
 | `index.html` | Home — biography and current work, with brief previews of the other pages. |
 | `education.html` | Education timeline, taught skills, and languages. |
 | `awards.html` | Honours at Tsinghua, then competition results. |
-| `skills.html` | Both projects in detail, plus tools and languages. |
+| `skills.html` | The three projects in detail, plus tools and languages. |
 | `styles.css` | Styling for every page. **Edit colours and type here, not in the HTML.** |
-| `files/` | Downloadable documents served by the site — the two project PDFs. |
-| `sitemap.xml` | Lists the four pages so search engines find them all at once. |
+| `lang.js` | The English/Chinese language toggle (and the saved-choice logic). |
+| `files/` | Downloadable documents — two project PDFs and the MiniProgram ZIP. |
+| `neurosync/` | The NeuroSync web app, a self-contained JavaScript prototype. |
+| `sitemap.xml` | Lists the pages so search engines find them all at once. |
 | `robots.txt` | Permits indexing and points crawlers at the sitemap. |
 | `.nojekyll` | Tells GitHub Pages to serve the files as-is instead of running Jekyll. |
 
@@ -61,33 +63,37 @@ To have Google actually index the site, submit
 [Google Search Console](https://search.google.com/search-console). A sitemap is a
 hint; Search Console is where you ask directly.
 
-Two folders on the computer are **gitignored and deliberately untracked**, so they are
+Three folders on the computer are **gitignored and deliberately untracked**, so they are
 not in this repository, not in its history, and not on the website:
 
 | Folder | Holds | Why excluded |
 | --- | --- | --- |
 | `_source/` | Original notes and my CV | Private |
-| `SmartCanteen/` | Working materials for the SmartCanteen project | Contains a 60 MB PowerPoint and the team's raw files |
+| `SmartCanteen/` | The MiniProgram source (published copy is the ZIP in `files/`) | Source of truth stays local; only the ZIP is published |
+| `2026-11-20 Hackathon/` | NeuroSync source, slide deck and competition notes | Contains an 8 MB PowerPoint and internal strategy notes |
 
-Both exist only on local disk. Keep it that way.
+All three exist only on local disk. Keep it that way.
 
 ## What is in `files/`
 
-Only two documents are published — the ones safe for anyone to see.
+Three things are published — the ones safe for anyone to see.
 
 | File | Served as |
 | --- | --- |
 | `moveit2-robotic-arm-report.pdf` | The robotics technical report, 32 pages |
 | `smartcanteen-poster-a4.pdf` | The SmartCanteen A4 poster |
+| `smartcanteen-wechat-miniprogram.zip` | The SmartCanteen MiniProgram source, for testing in WeChat Dev Tools |
 
-The rest of the SmartCanteen materials — the 40-page concept document, the slide deck
-and the team's raw notes — stay in the untracked `SmartCanteen/` folder and are **not
-published**. To publish the concept document later, copy it into `files/` first, then
-link to `files/...`; do not link straight into `SmartCanteen/`, because that folder is
-not in the repository.
+The ZIP is generated from the untracked `SmartCanteen/` folder and deliberately omits
+`project.private.config.json` (machine-specific, regenerated automatically by WeChat
+DevTools on open). To refresh it, rebuild the ZIP and copy it into `files/` — never link
+straight into `SmartCanteen/`, because that folder is not in the repository.
 
-Everything is plain HTML and CSS. No JavaScript, no frameworks, no build step — so there
-is nothing to compile and nothing that can break on its own.
+The four academic pages are plain HTML and CSS, with a single small script
+(`lang.js`) that powers the English/Chinese toggle — nothing else runs in the
+browser, and there is no build step. The one other JavaScript asset is the
+`neurosync/` folder, which is a separate self-contained app (the NeuroSync
+prototype) hosted under its own path.
 
 ## Editing the page
 
@@ -113,6 +119,10 @@ indentation. You never have to count `</div>` tags.
 - To add an award, copy an existing `<li>` inside the relevant list and change the text.
 - To add a whole new section, copy a marked block, give the `<section>` a fresh `id`, and
   update the label in the START marker so the two do not get confused.
+- **Every visible piece of text is bilingual.** Translatable text is wrapped in a pair of
+  spans: `<span class="t-en">English</span><span class="t-zh">中文</span>`. When you add
+  or change wording, update *both* spans. The button in the top-right corner switches
+  between the two languages and remembers the visitor's choice in their browser.
 
 **Navigation is duplicated in every file.** Each page has the same `<nav class="nav">`
 block near the top, and the only difference is which link carries
@@ -219,7 +229,8 @@ the one setting to remember before the site will appear.
 
 ## Notes
 
-- No phone number or email address appears anywhere on the site.
+- No phone number appears anywhere; the only contact detail published is the email
+  address in the Contact section on the home page.
 - The CV is deliberately **not** published here; it stays in `_source/` as a private
   document.
 - The site adapts to phone screens, follows the reader's light/dark preference, and each

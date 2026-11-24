@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Skills &amp; Projects — Ziyin Luo</title>
+<title data-en="Skills &amp; Projects — Ziyin Luo" data-zh="技能与项目 — 罗子寅">Skills &amp; Projects — Ziyin Luo</title>
 <meta name="description" content="Skills and projects of Ziyin Luo: ROS 2, MoveIt 2, Gazebo, Python, C++ and SolidWorks; motion planning for a multi-axis robotic arm; English, Chinese and French.">
 <meta name="author" content="Ziyin Luo">
 
@@ -17,6 +17,7 @@
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9878;</text></svg>">
 <link rel="stylesheet" href="styles.css">
+<script src="lang.js"></script>
 <!-- Structured data: says in machine-readable form that this page is about
      a person named Ziyin Luo. Edit the values below rather than deleting it. -->
 <script type="application/ld+json">
@@ -69,20 +70,24 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main"><span class="t-en">Skip to content</span><span class="t-zh">跳到正文</span></a>
 
 <div class="page">
 
   <header class="masthead">
+    <button id="lang-toggle" class="lang-toggle" type="button"
+            aria-label="Switch language / 切换语言" aria-pressed="false">
+      <span class="t-en">中文</span><span class="t-zh">EN</span>
+    </button>
     <p class="site-title">
       <a href="index.html">Ziyin Luo<span class="name-zh">罗子寅</span></a>
     </p>
     <nav class="nav" aria-label="Main">
       <ul>
-        <li><a href="index.html">About</a></li>
-        <li><a href="education.html">Education</a></li>
-        <li><a href="awards.html">Awards &amp; Honours</a></li>
-        <li><a href="skills.html" aria-current="page">Skills &amp; Projects</a></li>
+        <li><a href="index.html"><span class="t-en">About</span><span class="t-zh">关于</span></a></li>
+        <li><a href="education.html"><span class="t-en">Education</span><span class="t-zh">教育</span></a></li>
+        <li><a href="awards.html"><span class="t-en">Awards &amp; Honours</span><span class="t-zh">奖项与荣誉</span></a></li>
+        <li><a href="skills.html" aria-current="page"><span class="t-en">Skills &amp; Projects</span><span class="t-zh">技能与项目</span></a></li>
       </ul>
     </nav>
   </header>
@@ -90,85 +95,131 @@
   <main id="main">
 
     <div class="page-head">
-      <h1>Skills &amp; Projects</h1>
+      <h1><span class="t-en">Skills &amp; Projects</span><span class="t-zh">技能与项目</span></h1>
       <p class="subtitle">
-        Two projects: one that moves, and one that informs.
+        <span class="t-en">Three projects: one that moves, one that informs, and one that monitors.</span>
+        <span class="t-zh">三个项目：一个会动，一个提供信息，一个负责监测。</span>
       </p>
     </div>
 
     <!-- ===== START OF SECTION: PROJECT ===== -->
     <section id="project">
-      <h2>Projects</h2>
+      <h2><span class="t-en">Projects</span><span class="t-zh">项目</span></h2>
 
-      <div class="subsection" id="smartcanteen">
+      <div class="subsection" id="neurosync">
         <div class="entry">
-          <div class="when">October 2026</div>
+          <div class="when"><span class="t-en">November 2026</span><span class="t-zh">2026 年 11 月</span></div>
           <div class="what">
-            <h3>SmartCanteen — a WeChat MiniProgram for campus dining</h3>
+            <h3><span class="t-en">NeuroSync — home neurological monitoring</span><span class="t-zh">NeuroSync —— 家庭神经监测</span></h3>
             <p class="where">
-              Tsinghua University Freshmen Innovation Project · team of five ·
-              <span class="zh">智慧食堂</span>
+              <span class="t-en">Tsinghua Medical-Engineering Innovation Competition · team project · <span class="zh">未来健康黑客松</span></span>
+              <span class="t-zh">清华大学医工结合创新大赛 · 团队项目 · 未来健康黑客松</span>
             </p>
             <div class="detail">
               <p>
-                Tsinghua has so many canteens that deciding what to eat is a genuine
-                problem — especially for a new international student, who may be reading a
-                menu in a second language and has no way of knowing that a dish contains
-                peanuts until it arrives. SmartCanteen is a WeChat MiniProgram that answers
-                three questions in one place: <em>what can I eat, where do I find it, and
-                where can I sit?</em>
+                <span class="t-en">Long before Parkinson's disease or dementia is diagnosed, motor control starts to degrade in ways too subtle to notice day to day. NeuroSync turns the computer a person already uses into a continuous monitor for that decline.</span>
+                <span class="t-zh">在帕金森病或痴呆症被确诊之前很久，运动控制能力就开始以日复一日难以察觉的细微方式退化。NeuroSync 把人已经在使用的电脑变成监测这种退化的持续设备。</span>
               </p>
               <p>
-                The idea I find most interesting is that this is a <strong>two-sided</strong>
-                problem. Diners cannot see what is available; canteens cannot see what is
-                wanted. Both are caused by the same missing link — the data exists, but is
-                never joined up. So the prototype serves diners with bilingual dish
-                information, ingredient and allergen filtering, and live seating availability,
-                while the same underlying data feeds an operator dashboard identifying
-                over-production and unmet demand.
+                <span class="t-en">The working prototype tracks <strong>keystroke dynamics</strong> — how long a key is held, and the time between keys — together with <strong>mouse micro-tremors</strong>, builds a personal baseline, and flags what drifts from it. A gradual slowing of typing rhythm can hint at early decline, while a sudden drop in accuracy is treated as a possible stroke indicator and triggers the emergency response: smart-home lights flash and help is called.</span>
+                <span class="t-zh">可运行的原型监测<strong>击键动态</strong>——按键按住多久、按键之间的间隔——以及<strong>鼠标微颤</strong>，建立个人基线，并对偏离基线的变化发出警示。打字节奏逐渐变慢可能提示早期衰退，而准确率突然下降则被视为可能的中风信号，触发应急响应：智能家居灯光闪烁并呼叫救援。</span>
               </p>
               <p>
-                One design decision I would defend hardest: the system distinguishes
-                <strong>"no allergen information available"</strong> from
-                <strong>"verified to be free of this allergen."</strong> For anyone with a
-                real allergy those are completely different statements, and conflating them
-                is the kind of shortcut that makes a product dangerous rather than merely
-                unhelpful.
+                <span class="t-en">The companion piece, still on the drawing board, is a <strong>wristband</strong> — a closed-loop stabiliser for essential tremor and freezing of gait. A motion sensor catches the onset of a tremor or stress spike and responds with rhythmic haptic vibration and light cues to interrupt it in real time, logging every episode for both doctor and patient.</span>
+                <span class="t-zh">与之配套的<strong>腕带</strong>仍在设计阶段——它是一种针对特发性震颤和冻结步态的闭环稳定器。运动传感器捕捉到震颤或应激峰值开始时，便以有节奏的触觉振动和光提示做出反应，实时打断震颤，并为医生和患者记录每一次发作。</span>
               </p>
               <p>
-                The privacy design follows the same instinct. Seat occupancy is inferred from
-                an overhead camera, but the question asked of the model is only
-                <em>"is this seat taken?"</em> and never <em>"who is sitting here?"</em> —
-                no facial recognition, raw frames processed and discarded at the edge, and
-                only anonymous aggregates stored.
-              </p>
-              <p>
-                I worked on this in a team of five, building the WeChat MiniProgram in
-                <strong>WeChat Dev Tools</strong> with <strong>JavaScript</strong> on the
-                front end and <strong>Python</strong> for the detection and data side. The
-                poster below shows the working prototype.
+                <span class="t-en">Everything runs locally in the browser — no server, no upload. That is also the privacy position: the data never leaves the machine.</span>
+                <span class="t-zh">所有功能都在浏览器本地运行——没有服务器，也没有上传。这同时也是隐私立场：数据从不离开本机。</span>
               </p>
             </div>
             <div class="more">
-              <a href="files/smartcanteen-poster-a4.pdf">Read the project poster
-              (PDF, A4, 275 KB) →</a>
+              <a href="neurosync/"><span class="t-en">Open the NeuroSync web app →</span><span class="t-zh">打开 NeuroSync 网页应用 →</span></a>
             </div>
           </div>
         </div>
 
         <dl class="rows">
           <div>
-            <dt>Focus</dt>
+            <dt><span class="t-en">Focus</span><span class="t-zh">重点</span></dt>
             <dd>
-              Bilingual food information, dietary and allergen filtering, privacy-preserving
-              occupancy sensing, demand prediction
+              <span class="t-en">Neurological early warning, keystroke dynamics, tremor detection, health monitoring</span>
+              <span class="t-zh">神经早期预警、击键动态、震颤检测、健康监测</span>
             </dd>
           </div>
           <div>
-            <dt>Tools</dt>
+            <dt><span class="t-en">Tools</span><span class="t-zh">工具</span></dt>
             <dd>
               <ul class="tag-list">
-                <li>WeChat MiniProgram</li>
+                <li>JavaScript</li>
+                <li>Canvas</li>
+                <li>Web Bluetooth</li>
+                <li>ESP32</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt><span class="t-en">Event</span><span class="t-zh">赛事</span></dt>
+            <dd><span class="t-en">Tsinghua Medical-Engineering Innovation Competition, November 2026</span><span class="t-zh">清华大学医工结合创新大赛，2026 年 11 月</span></dd>
+          </div>
+        </dl>
+        <p class="note">
+          <span class="t-en">A team project. The web dashboard is working; the wristband hardware is still in development.</span>
+          <span class="t-zh">团队项目。网页看板已可运行；腕带硬件仍在开发中。</span>
+        </p>
+      </div>
+
+      <div class="subsection" id="smartcanteen">
+        <div class="entry">
+          <div class="when"><span class="t-en">October 2026</span><span class="t-zh">2026 年 10 月</span></div>
+          <div class="what">
+            <h3><span class="t-en">SmartCanteen — a WeChat MiniProgram for campus dining</span><span class="t-zh">SmartCanteen —— 校园餐饮微信小程序</span></h3>
+            <p class="where">
+              <span class="t-en">Tsinghua University Freshmen Innovation Project · team of five · <span class="zh">智慧食堂</span></span>
+              <span class="t-zh">清华大学新生创新项目 · 五人团队 · 智慧食堂</span>
+            </p>
+            <div class="detail">
+              <p>
+                <span class="t-en">Tsinghua has so many canteens that deciding what to eat is a genuine problem — especially for a new international student, who may be reading a menu in a second language and has no way of knowing that a dish contains peanuts until it arrives. SmartCanteen is a WeChat MiniProgram that answers three questions in one place: <em>what can I eat, where do I find it, and where can I sit?</em></span>
+                <span class="t-zh">清华的食堂太多，决定吃什么成了一个真实的问题——尤其对新生国际学生来说，他们可能要用第二语言看菜单，而且在一道菜端上来之前根本无法知道里面是否含有花生。SmartCanteen 是一个微信小程序，在一个地方回答三个问题：<em>我能吃什么？到哪里找？哪里有座位？</em></span>
+              </p>
+              <p>
+                <span class="t-en">The idea I find most interesting is that this is a <strong>two-sided</strong> problem. Diners cannot see what is available; canteens cannot see what is wanted. Both are caused by the same missing link — the data exists, but is never joined up. So the prototype serves diners with bilingual dish information, ingredient and allergen filtering, and live seating availability, while the same underlying data feeds an operator dashboard identifying over-production and unmet demand.</span>
+                <span class="t-zh">我认为最有趣的一点是，这是一个<strong>双向</strong>的问题。就餐者看不到有什么可吃；食堂看不到大家想吃什么。两者都源于同一个缺失的环节——数据存在，却从未被打通。因此，这个原型一方面为就餐者提供双语菜品信息、配料与过敏原筛选和实时座位情况，另一方面用同样的底层数据为运营看板提供过度供应与未满足需求的分析。</span>
+              </p>
+              <p>
+                <span class="t-en">One design decision I would defend hardest: the system distinguishes <strong>"no allergen information available"</strong> from <strong>"verified to be free of this allergen."</strong> For anyone with a real allergy those are completely different statements, and conflating them is the kind of shortcut that makes a product dangerous rather than merely unhelpful.</span>
+                <span class="t-zh">我会最坚决地捍卫一个设计决定：系统把<strong>“无过敏原信息”</strong>和<strong>“已确认不含此过敏原”</strong>区分开来。对真正过敏的人来说，这两句话含义完全不同；把它们混为一谈，正是那种让产品变得危险而不仅仅是无用的偷懒。</span>
+              </p>
+              <p>
+                <span class="t-en">The privacy design follows the same instinct. Seat occupancy is inferred from an overhead camera, but the question asked of the model is only <em>"is this seat taken?"</em> and never <em>"who is sitting here?"</em> — no facial recognition, raw frames processed and discarded at the edge, and only anonymous aggregates stored.</span>
+                <span class="t-zh">隐私设计遵循同样的直觉。座位占用情况通过顶部摄像头推断，但向模型提出的问题只是<em>“这个座位有人吗？”</em>，而绝不是<em>“谁坐在这里？”</em>——没有人脸识别，原始帧在边缘端处理并丢弃，只存储匿名的聚合数据。</span>
+              </p>
+              <p>
+                <span class="t-en">I worked on this in a team of five, building the WeChat MiniProgram in <strong>WeChat Dev Tools</strong> with <strong>JavaScript</strong> on the front end and <strong>Python</strong> for the detection and data side. The poster below shows the working prototype.</span>
+                <span class="t-zh">我和五人团队共同完成这个项目，在<strong>微信开发者工具</strong>中用 <strong>JavaScript</strong> 开发小程序前端，用 <strong>Python</strong> 负责检测与数据部分。下方的海报展示了可运行的原型。</span>
+              </p>
+            </div>
+            <div class="more">
+              <a href="files/smartcanteen-poster-a4.pdf"><span class="t-en">Read the project poster (PDF, A4, 275 KB) →</span><span class="t-zh">阅读项目海报（PDF，A4，275 KB）→</span></a>
+              <a href="files/smartcanteen-wechat-miniprogram.zip"><span class="t-en">Download the MiniProgram source (ZIP, 1.1 MB) to test in WeChat Dev Tools →</span><span class="t-zh">下载小程序源代码（ZIP，1.1 MB），在微信开发者工具中测试 →</span></a>
+            </div>
+          </div>
+        </div>
+
+        <dl class="rows">
+          <div>
+            <dt><span class="t-en">Focus</span><span class="t-zh">重点</span></dt>
+            <dd>
+              <span class="t-en">Bilingual food information, dietary and allergen filtering, privacy-preserving occupancy sensing, demand prediction</span>
+              <span class="t-zh">双语餐饮信息、饮食与过敏原筛选、隐私保护的占用感知、需求预测</span>
+            </dd>
+          </div>
+          <div>
+            <dt><span class="t-en">Tools</span><span class="t-zh">工具</span></dt>
+            <dd>
+              <ul class="tag-list">
+                <li><span class="t-en">WeChat MiniProgram</span><span class="t-zh">微信小程序</span></li>
                 <li>JavaScript</li>
                 <li>Python</li>
                 <li>YOLO</li>
@@ -177,107 +228,89 @@
             </dd>
           </div>
           <div>
-            <dt>Team</dt>
+            <dt><span class="t-en">Team</span><span class="t-zh">团队</span></dt>
             <dd>
-              Five of us, from five countries — <strong>Saraf</strong> (Bangladesh),
-              <strong>Ziyin Luo</strong> (United Kingdom), <strong>Evelyna</strong>
-              (Indonesia), <strong>Sara</strong> (United Arab Emirates) and
-              <strong>Inging</strong> (Thailand).
+              <span class="t-en">Five of us, from five countries — <strong>Saraf</strong> (Bangladesh), <strong>Ziyin Luo</strong> (United Kingdom), <strong>Evelyna</strong> (Indonesia), <strong>Sara</strong> (United Arab Emirates) and <strong>Inging</strong> (Thailand).</span>
+              <span class="t-zh">我们五个人来自五个国家——<strong>Saraf</strong>（孟加拉国）、<strong>Ziyin Luo</strong>（英国）、<strong>Evelyna</strong>（印度尼西亚）、<strong>Sara</strong>（阿拉伯联合酋长国）和 <strong>Inging</strong>（泰国）。</span>
             </dd>
           </div>
           <div>
-            <dt>Event</dt>
-            <dd>Tsinghua University Freshmen Innovation Project, October 2026</dd>
+            <dt><span class="t-en">Event</span><span class="t-zh">赛事</span></dt>
+            <dd><span class="t-en">Tsinghua University Freshmen Innovation Project, October 2026</span><span class="t-zh">清华大学新生创新项目，2026 年 10 月</span></dd>
           </div>
         </dl>
         <p class="note">
-          A team project: the concept, the design and the prototype were produced jointly by
-          the five of us.
+          <span class="t-en">A team project: the concept, the design and the prototype were produced jointly by the five of us.</span>
+          <span class="t-zh">团队项目：概念、设计和原型均由我们五人共同完成。</span>
         </p>
       </div>
 
       <div class="subsection" id="robotic-arm">
         <div class="entry">
-          <div class="when">2025 – 2026</div>
-        <div class="what">
-          <h3>Cartesian motion planning and simulation for a multi-axis robotic arm</h3>
-          <p class="where">
-            <span class="zh">学生课外项目</span> — student extracurricular project
-          </p>
-          <div class="detail">
-            <p>
-              The aim was to let a robot arm be commanded in the coordinates a human actually
-              cares about. The arm is a six-degree-of-freedom model — seven links and six
-              joints, defined in <strong>URDF</strong> — simulated in <strong>Gazebo</strong>
-              and driven through <code>ros2_control</code>. Using <strong>MoveIt 2</strong> I
-              converted Cartesian target poses into inverse-kinematics solutions for the joint
-              chain, generated the trajectories between them, and verified the motion in
-              simulation before it ever ran on hardware.
+          <div class="when"><span class="t-en">2025 – 2026</span><span class="t-zh">2025 – 2026</span></div>
+          <div class="what">
+            <h3><span class="t-en">Cartesian motion planning and simulation for a multi-axis robotic arm</span><span class="t-zh">多轴机械臂的笛卡尔运动规划与仿真</span></h3>
+            <p class="where">
+              <span class="t-en"><span class="zh">学生课外项目</span> — student extracurricular project</span>
+              <span class="t-zh">学生课外项目</span>
             </p>
-            <p>
-              Configuring the arm meant working through the MoveIt Setup Assistant in full:
-              the self-collision matrix, the planning group, the KDL kinematics plugin as the
-              IK solver, and the two controllers that actually execute motion — a Joint
-              Trajectory Controller on the robot side and a Follow Joint Trajectory controller
-              on the MoveIt side.
-            </p>
-            <p>
-              I also benchmarked the planning pipelines rather than taking the default on
-              trust, comparing OMPL, CHOMP, STOMP, TOMP and RRT-Connect on trajectory quality
-              and planning time. The trade-off is real: the sampling-based planners return a
-              path quickly but produce jerky motion that needs smoothing, while the
-              optimisation-based ones give smooth paths at a computational cost that is hard
-              to make real-time.
-            </p>
-            <p>
-              The part I am most pleased with is the <strong>TF</strong> work. The arm does not
-              natively understand a point in space, so I used the TF library to carry a target
-              from a depth camera's coordinate frame into the robot's base frame — which is
-              what let this project link up with a separate student project using YOLO
-              detection and a depth camera to locate objects. That collaboration is where most
-              of my debugging time went: frames that disagreed with each other, and timestamps
-              that did not line up.
-            </p>
-          </div>
-          <div class="more">
-            <a href="files/moveit2-robotic-arm-report.pdf">Read the full technical report
-            (PDF, 32 pages, 1.6 MB) →</a>
+            <div class="detail">
+              <p>
+                <span class="t-en">The aim was to let a robot arm be commanded in the coordinates a human actually cares about. The arm is a six-degree-of-freedom model — seven links and six joints, defined in <strong>URDF</strong> — simulated in <strong>Gazebo</strong> and driven through <code>ros2_control</code>. Using <strong>MoveIt 2</strong> I converted Cartesian target poses into inverse-kinematics solutions for the joint chain, generated the trajectories between them, and verified the motion in simulation before it ever ran on hardware.</span>
+                <span class="t-zh">目标在于让机械臂能够以人类真正关心的坐标来接受指令。这个机械臂是一个六自由度模型——七个连杆、六个关节，用 <strong>URDF</strong> 定义——在 <strong>Gazebo</strong> 中仿真，并通过 <code>ros2_control</code> 驱动。我使用 <strong>MoveIt 2</strong> 将笛卡尔目标位姿转换为关节链的逆运动学解，生成它们之间的轨迹，并在真正上硬件之前先在仿真中验证运动。</span>
+              </p>
+              <p>
+                <span class="t-en">Configuring the arm meant working through the MoveIt Setup Assistant in full: the self-collision matrix, the planning group, the KDL kinematics plugin as the IK solver, and the two controllers that actually execute motion — a Joint Trajectory Controller on the robot side and a Follow Joint Trajectory controller on the MoveIt side.</span>
+                <span class="t-zh">配置机械臂意味着完整地走完 MoveIt Setup Assistant：自碰撞矩阵、规划组、作为逆解求解器的 KDL 运动学插件，以及真正执行运动的两个控制器——机器人侧的 Joint Trajectory Controller 和 MoveIt 侧的 Follow Joint Trajectory 控制器。</span>
+              </p>
+              <p>
+                <span class="t-en">I also benchmarked the planning pipelines rather than taking the default on trust, comparing OMPL, CHOMP, STOMP, TOMP and RRT-Connect on trajectory quality and planning time. The trade-off is real: the sampling-based planners return a path quickly but produce jerky motion that needs smoothing, while the optimisation-based ones give smooth paths at a computational cost that is hard to make real-time.</span>
+                <span class="t-zh">我也没有盲目信任默认的规划管线，而是对其做了基准测试，从轨迹质量和规划时间上比较 OMPL、CHOMP、STOMP、TOMP 和 RRT-Connect。这种权衡是真实存在的：基于采样的规划器能快速返回路径，但产生的运动会抖动、需要平滑；基于优化的规划器给出平滑路径，但计算开销大到难以做到实时。</span>
+              </p>
+              <p>
+                <span class="t-en">The part I am most pleased with is the <strong>TF</strong> work. The arm does not natively understand a point in space, so I used the TF library to carry a target from a depth camera's coordinate frame into the robot's base frame — which is what let this project link up with a separate student project using YOLO detection and a depth camera to locate objects. That collaboration is where most of my debugging time went: frames that disagreed with each other, and timestamps that did not line up.</span>
+                <span class="t-zh">我最满意的是 <strong>TF</strong>（坐标变换）部分。机械臂本身并不理解空间中的一个点，所以我用 TF 库把一个目标从深度相机的坐标系变换到机器人基座坐标系——正是这一点让本项目得以与另一个使用 YOLO 检测和深度相机定位物体的学生项目衔接。那次协作花掉了我大部分调试时间：彼此不一致的坐标系，以及对不上的时间戳。</span>
+              </p>
+            </div>
+            <div class="more">
+              <a href="files/moveit2-robotic-arm-report.pdf"><span class="t-en">Read the full technical report (PDF, 32 pages, 1.6 MB) →</span><span class="t-zh">阅读完整技术报告（PDF，32 页，1.6 MB）→</span></a>
+            </div>
           </div>
         </div>
+
+        <dl class="rows">
+          <div>
+            <dt><span class="t-en">Focus</span><span class="t-zh">重点</span></dt>
+            <dd>
+              <span class="t-en">Motion planning, inverse kinematics, coordinate-frame transforms, trajectory simulation</span>
+              <span class="t-zh">运动规划、逆运动学、坐标系变换、轨迹仿真</span>
+            </dd>
+          </div>
+          <div>
+            <dt><span class="t-en">Tools</span><span class="t-zh">工具</span></dt>
+            <dd>
+              <ul class="tag-list">
+                <li>ROS 2</li>
+                <li>MoveIt 2</li>
+                <li>Gazebo</li>
+                <li>RViz2</li>
+                <li>URDF</li>
+                <li>Docker</li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
       </div>
 
-      <dl class="rows">
-        <div>
-          <dt>Focus</dt>
-          <dd>
-            Motion planning, inverse kinematics, coordinate-frame transforms, trajectory
-            simulation
-          </dd>
-        </div>
-        <div>
-          <dt>Tools</dt>
-          <dd>
-            <ul class="tag-list">
-              <li>ROS 2</li>
-              <li>MoveIt 2</li>
-              <li>Gazebo</li>
-              <li>RViz2</li>
-              <li>URDF</li>
-              <li>Docker</li>
-            </ul>
-          </dd>
-        </div>
-      </dl>
-      </div>
     </section>
     <!-- ===== END OF SECTION ===== -->
 
     <!-- ===== START OF SECTION: TOOLS ===== -->
     <section id="tools">
-      <h2>Tools</h2>
+      <h2><span class="t-en">Tools</span><span class="t-zh">工具</span></h2>
       <dl class="rows">
         <div>
-          <dt>Programming</dt>
+          <dt><span class="t-en">Programming</span><span class="t-zh">编程</span></dt>
           <dd>
             <ul class="tag-list">
               <li>Python</li>
@@ -288,7 +321,7 @@
           </dd>
         </div>
         <div>
-          <dt>Robotics</dt>
+          <dt><span class="t-en">Robotics</span><span class="t-zh">机器人</span></dt>
           <dd>
             <ul class="tag-list">
               <li>ROS 2</li>
@@ -301,11 +334,11 @@
           </dd>
         </div>
         <div>
-          <dt>App platforms</dt>
+          <dt><span class="t-en">App platforms</span><span class="t-zh">应用平台</span></dt>
           <dd>
             <ul class="tag-list">
-              <li>WeChat MiniProgram</li>
-              <li>WeChat Dev Tools</li>
+              <li><span class="t-en">WeChat MiniProgram</span><span class="t-zh">微信小程序</span></li>
+              <li><span class="t-en">WeChat Dev Tools</span><span class="t-zh">微信开发者工具</span></li>
             </ul>
           </dd>
         </div>
@@ -323,35 +356,34 @@
 
     <!-- ===== START OF SECTION: LANGUAGES ===== -->
     <section id="languages">
-      <h2>Languages</h2>
+      <h2><span class="t-en">Languages</span><span class="t-zh">语言</span></h2>
       <dl class="rows">
         <div>
-          <dt>English</dt>
-          <dd>Native</dd>
+          <dt><span class="t-en">English</span><span class="t-zh">英语</span></dt>
+          <dd><span class="t-en">Native</span><span class="t-zh">母语</span></dd>
         </div>
         <div>
-          <dt>Chinese</dt>
-          <dd>HSK 5 and HSK 6 <span class="zh">汉语水平考试</span></dd>
+          <dt><span class="t-en">Chinese</span><span class="t-zh">中文</span></dt>
+          <dd><span class="t-en">HSK 5 and HSK 6 <span class="zh">汉语水平考试</span></span><span class="t-zh">HSK 5 级和 HSK 6 级</span></dd>
         </div>
         <div>
-          <dt>French</dt>
-          <dd>Second language</dd>
+          <dt><span class="t-en">French</span><span class="t-zh">法语</span></dt>
+          <dd><span class="t-en">Second language</span><span class="t-zh">第二语言</span></dd>
         </div>
       </dl>
       <p class="note">
-        Having grown up in London and now studying in Beijing, I work in English and Chinese
-        day to day. French was my second language at school.
+        <span class="t-en">Having grown up in London and now studying in Beijing, I work in English and Chinese day to day. French was my second language at school.</span>
+        <span class="t-zh">我在伦敦长大，如今在北京求学，日常使用英语和中文工作。法语是我中学时的第二语言。</span>
       </p>
     </section>
     <!-- ===== END OF SECTION ===== -->
 
     <!-- ===== START OF SECTION: ELSEWHERE ===== -->
     <section id="elsewhere">
-      <h2>Elsewhere</h2>
+      <h2><span class="t-en">Elsewhere</span><span class="t-zh">其他</span></h2>
       <p>
-        My degrees, schools and dates are on the
-        <a href="education.html">education</a> page, and my competition results are on the
-        <a href="awards.html">awards</a> page.
+        <span class="t-en">My degrees, schools and dates are on the <a href="education.html">education</a> page, and my competition results are on the <a href="awards.html">awards</a> page.</span>
+        <span class="t-zh">我的学位、学校和日期详见<a href="education.html">教育</a>页面，竞赛成绩详见<a href="awards.html">奖项</a>页面。</span>
       </p>
     </section>
     <!-- ===== END OF SECTION ===== -->
@@ -359,8 +391,8 @@
   </main>
 
   <footer>
-    <span>Ziyin Luo <span class="zh">罗子寅</span> · Tsinghua University</span>
-    <span>Last updated November 2026</span>
+    <span>Ziyin Luo <span class="zh">罗子寅</span> · <span class="t-en">Tsinghua University</span><span class="t-zh">清华大学</span></span>
+    <span><span class="t-en">Last updated November 2026</span><span class="t-zh">最近更新：2026 年 11 月</span></span>
   </footer>
 
 </div>
