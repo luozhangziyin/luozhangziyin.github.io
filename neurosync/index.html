@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuroSync</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="alertOverlay" class="alert-overlay hidden" aria-hidden="true">
+    <div class="alert-card">
+      <div class="alert-flash">⚠</div>
+      <h1 id="alertTitle"></h1>
+      <p id="alertText"></p>
+      <div class="alert-actions">
+        <button class="btn btn-danger" id="alertSOS"></button>
+        <button class="btn btn-ghost" id="alertDismiss" data-i18n="alert.dismissLabel">取消 / 我没事</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <img class="brand-logo" src="logo.png" alt="NeuroSync" />
+    </div>
+    <div class="topbar-status">
+      <button class="lang-toggle" id="langToggle" title="Switch language">EN</button>
+      <span class="pill" id="bleStatus">腕带：未连接</span>
+      <span class="pill" id="monitorStatus">监测：待机</span>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-tab="overview" data-i18n="nav.overview">健康总览</button>
+    <button class="tab" data-tab="typing" data-i18n="nav.typing">打字监测</button>
+    <button class="tab" data-tab="mouse" data-i18n="nav.mouse">鼠标震颤</button>
+    <button class="tab" data-tab="wristband" data-i18n="nav.wristband">腕带监测</button>
+    <button class="tab" data-tab="settings" data-i18n="nav.settings">设置</button>
+  </nav>
+
+  <main id="main">
+
+    <!-- ============ 健康总览 ============ -->
+    <section class="view active" id="view-overview">
+      <div class="grid-scores">
+        <div class="card score-card">
+          <div class="score-ring" id="ringRhythm"><span id="scoreRhythm">--</span></div>
+          <div class="score-meta">
+            <h3 data-i18n="overview.rhythmScore">打字节律评分</h3>
+            <p id="scoreRhythmLabel">--</p>
+          </div>
+        </div>
+        <div class="card score-card">
+          <div class="score-ring accent2" id="ringTremor"><span id="scoreTremor">--</span></div>
+          <div class="score-meta">
+            <h3 data-i18n="overview.tremorScore">震颤稳定性评分</h3>
+            <p id="scoreTremorLabel">--</p>
+          </div>
+        </div>
+        <div class="card score-card">
+          <div class="score-ring accent3" id="ringWrist"><span id="scoreWrist">--</span></div>
+          <div class="score-meta">
+            <h3 data-i18n="overview.wristEvents">腕带今日事件</h3>
+            <p id="scoreWristLabel">--</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3 data-i18n="overview.flightTrend">打字节律趋势（飞行时间 / ms）</h3>
+          <canvas id="chartFlight" class="chart"></canvas>
+        </div>
+        <div class="card">
+          <h3 data-i18n="overview.tremorTrend">鼠标震颤趋势（抖动指数）</h3>
+          <canvas id="chartTremorTrend" class="chart"></canvas>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="overview.timeline">今日事件时间线</h3>
+        <div id="eventTimeline" class="timeline"><p class="muted">--</p></div>
+      </div>
+
+      <div class="card banner" id="riskBanner">
+        <h3 data-i18n="overview.risk">风险提示</h3>
+        <p id="riskText">--</p>
+      </div>
+    </section>
+
+    <!-- ============ 打字监测 ============ -->
+    <section class="view" id="view-typing">
+      <div class="card">
+        <h3><span data-i18n="typing.title">打字测试</span> <span class="hint" data-i18n="typing.titleHint">在下方输入框打字，系统实时测量节律与准确率</span></h3>
+        <div class="test-sentence" id="testSentence">点击“开始测试”加载句子。</div>
+        <textarea id="typingInput" class="typing-input" data-i18n-placeholder="typing.placeholder" placeholder="在这里输入上方句子…" disabled></textarea>
+        <div class="test-controls">
+          <button class="btn btn-primary" id="btnStartTyping" data-i18n="typing.start">开始测试</button>
+          <button class="btn btn-ghost" id="btnResetTyping" data-i18n="typing.reset">重置</button>
+          <span class="pill" id="typingLive">--</span>
+        </div>
+        <div class="metrics">
+          <div class="metric"><span class="metric-label" data-i18n="typing.hold">按住时长 (ms)</span><span class="metric-value" id="mHold">--</span></div>
+          <div class="metric"><span class="metric-label" data-i18n="typing.flight">飞行时间 (ms)</span><span class="metric-value" id="mFlight">--</span></div>
+          <div class="metric"><span class="metric-label" data-i18n="typing.wpm">打字速度 (WPM)</span><span class="metric-value" id="mWpm">--</span></div>
+          <div class="metric"><span class="metric-label" data-i18n="typing.acc">准确率 (%)</span><span class="metric-value" id="mAcc">--</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 data-i18n="typing.chart">实时节律（最近 60 次按键）</h3>
+        <canvas id="chartKeystroke" class="chart"></canvas>
+      </div>
+      <div class="card">
+        <h3 data-i18n="interpret.title">结果解读</h3>
+        <div id="typingGauges"><p class="interpret-empty" data-i18n="interpret.empty">完成一次测试后，这里会显示解读。</p></div>
+        <p id="typingVerdict" class="verdict" style="display:none"></p>
+        <p class="interpret-disclaimer" data-i18n="interpret.disclaimer">参考范围仅为演示示意，不构成医学诊断。</p>
+      </div>
+    </section>
+
+    <!-- ============ 鼠标震颤 ============ -->
+    <section class="view" id="view-mouse">
+      <div class="card">
+        <h3><span data-i18n="mouse.title">震颤测试</span> <span class="hint" data-i18n="mouse.titleHint">两种方式：定点保持 或 直线追踪</span></h3>
+        <div class="test-controls">
+          <button class="btn btn-primary" id="btnHoldTest" data-i18n="mouse.holdTest">定点保持 5s</button>
+          <button class="btn btn-primary" id="btnLineTest" data-i18n="mouse.lineTest">直线追踪</button>
+          <button class="btn btn-ghost" id="btnMouseReset" data-i18n="mouse.reset">重置</button>
+          <span class="pill" id="mouseLive">--</span>
+        </div>
+        <div class="mouse-stage" id="mouseStage">
+          <p class="muted" id="mouseStageHint">点击“定点保持”后，将鼠标保持在红点内；或点击“直线追踪”沿横线移动。</p>
+          <div id="mouseTarget" class="mouse-target hidden"></div>
+          <canvas id="mouseTrace" class="mouse-trace"></canvas>
+        </div>
+        <div class="metrics">
+          <div class="metric"><span class="metric-label" data-i18n="mouse.jitter">抖动指数</span><span class="metric-value" id="mJitter">--</span></div>
+          <div class="metric"><span class="metric-label" data-i18n="mouse.freq">震颤频率 (Hz)</span><span class="metric-value" id="mFreq">--</span></div>
+          <div class="metric"><span class="metric-label" data-i18n="mouse.dev">直线偏差 (px)</span><span class="metric-value" id="mDev">--</span></div>
+          <div class="metric"><span class="metric-label" data-i18n="mouse.samples">采样点数</span><span class="metric-value" id="mSamples">--</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 data-i18n="interpret.title">结果解读</h3>
+        <div id="mouseGauges"><p class="interpret-empty" data-i18n="interpret.empty">完成一次测试后，这里会显示解读。</p></div>
+        <p id="mouseVerdict" class="verdict" style="display:none"></p>
+        <p class="interpret-disclaimer" data-i18n="interpret.disclaimer">参考范围仅为演示示意，不构成医学诊断。</p>
+      </div>
+    </section>
+
+    <!-- ============ 腕带监测 ============ -->
+    <section class="view" id="view-wristband">
+      <div class="card">
+        <h3 data-i18n="wrist.title">腕带连接</h3>
+        <p class="muted" data-i18n="wrist.desc">ESP32 腕带通过蓝牙低功耗 (BLE) 上报震颤 / 冻结步态事件。当前支持模拟数据与真实设备连接。</p>
+        <div class="test-controls">
+          <button class="btn btn-primary" id="btnConnectBle" data-i18n="wrist.connect">🔗 连接腕带 (BLE)</button>
+          <button class="btn btn-ghost" id="btnDisconnectBle" data-i18n="wrist.disconnect" disabled>断开</button>
+          <button class="btn btn-primary" id="btnSimulate">▶ 开始模拟数据流</button>
+          <button class="btn btn-ghost" id="btnSimEvent" data-i18n="wrist.inject">注入一次事件</button>
+        </div>
+        <p class="hint" id="bleInfo">蓝牙需要浏览器支持（Chrome/Edge）且通过 localhost 或 HTTPS 打开。</p>
+      </div>
+      <div class="card"><h3 data-i18n="wrist.cmdTitle">App → 腕带：提示控制</h3><div class="test-controls"><label data-i18n="wrist.cmdLevel">提示强度</label><input type="range" id="cueLevel" min="10" max="100" value="60"><span id="cueLevelVal">60</span><button class="btn btn-primary" id="btnCueTest" data-i18n="wrist.cmdTest">测试振动提示</button><button class="btn btn-ghost" id="btnCueStop" data-i18n="wrist.cmdStop">停止输出</button></div><p class="hint"><label><input type="checkbox" id="chkBeat" checked> <span data-i18n="wrist.audio">冻结时播放声音节拍（110 BPM）</span></label></p><div class="metrics"><div class="metric"><span class="metric-label" data-i18n="wrist.hr">心率 (bpm)</span><span class="metric-value" id="wHR">--</span></div><div class="metric"><span class="metric-label" data-i18n="wrist.eda">皮电 (μS)</span><span class="metric-value" id="wEDA">--</span></div></div></div>
+      <div class="grid-2">
+        <div class="card">
+          <h3 data-i18n="wrist.accelChart">实时加速度信号</h3>
+          <canvas id="chartAccel" class="chart"></canvas>
+        </div>
+        <div class="card">
+          <h3 data-i18n="wrist.stats">今日事件统计</h3>
+          <div class="metrics">
+            <div class="metric"><span class="metric-label" data-i18n="wrist.tremor">震颤发作</span><span class="metric-value" id="wTremor">0</span></div>
+            <div class="metric"><span class="metric-label" data-i18n="wrist.fog">冻结步态</span><span class="metric-value" id="wFog">0</span></div>
+            <div class="metric"><span class="metric-label" data-i18n="wrist.stress">压力峰值</span><span class="metric-value" id="wStress">0</span></div>
+            <div class="metric"><span class="metric-label" data-i18n="wrist.warn">冻结预警</span><span class="metric-value" id="wWarn">0</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 data-i18n="wrist.logTitle">发作记录（供医生与患者查看）</h3>
+        <div id="wristbandLog" class="timeline"><p class="muted">暂无事件</p></div>
+      </div>
+    </section>
+
+    <!-- ============ 设置 ============ -->
+    <section class="view" id="view-settings">
+      <div class="card">
+        <h3 data-i18n="settings.baseline">基线管理</h3>
+        <p class="muted" data-i18n="settings.baselineDesc">系统使用前几组测试建立你的个人基线，之后检测偏离。</p>
+        <div class="test-controls">
+          <button class="btn btn-ghost" id="btnRebuildBaseline" data-i18n="settings.rebuild">重新建立基线</button>
+          <button class="btn btn-ghost" id="btnClearAll" data-i18n="settings.clear">清空全部数据</button>
+          <button class="btn btn-ghost" id="btnExport" data-i18n="settings.export">导出数据 (JSON)</button>
+        </div>
+      </div>
+      <div class="card">
+        <h3 data-i18n="settings.bleParams">BLE 参数（ESP32 腕带）</h3>
+        <p class="muted" data-i18n="settings.bleDesc">与你的 ESP32 固件中的 UUID 保持一致。</p>
+        <div class="form-row">
+          <label data-i18n="settings.serviceUUID">服务 UUID</label>
+          <input type="text" id="cfgServiceUUID" value="4fafc201-1fb5-459e-8fcc-c5c9c331914b" />
+        </div>
+        <div class="form-row">
+          <label data-i18n="settings.charUUID">事件特征 UUID</label>
+          <input type="text" id="cfgCharUUID" value="beb5483e-36e1-4688-b7f5-ea07361b26a8" />
+        </div>
+      </div>
+      <div class="card">
+        <h3 data-i18n="settings.demo">紧急预案演示</h3>
+        <p class="muted" data-i18n="settings.demoDesc">用于路演现场演示：触发“检测到急性异常”的智能家居联动（灯光闪烁 + 呼叫急救）。快捷键 Ctrl+Alt+T。</p>
+        <div class="test-controls">
+          <button class="btn btn-danger" id="btnDemoAlert" data-i18n="settings.demoBtn">🚨 触发紧急预案演示</button>
+        </div>
+      </div>
+      <div class="card">
+        <h3 data-i18n="settings.about">关于</h3>
+        <p class="muted" data-i18n="settings.about1">NeuroSync —— 面向居家场景的神经运动早期监测原型。</p>
+        <p class="muted" data-i18n="settings.about2">数据仅保存在本机浏览器 localStorage，不上传服务器。</p>
+      </div>
+          <div class="card"><h3 data-i18n="settings.emerg">紧急联系与提示通道</h3><div class="test-controls"><label><span data-i18n="settings.caregiver">照护人电话</span> <input id="cfgCaregiver" type="tel" placeholder="138xxxxxxxx"></label><label><span data-i18n="settings.emergency">急救电话</span> <input id="cfgEmergency" type="tel" value="120"></label><label><span data-i18n="settings.cueUUID">提示指令特征 UUID（可写）</span> <input id="cfgCueUUID" type="text" size="38"></label></div></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p data-i18n="footer.note">NeuroSync · 数据仅保存在本机 · 演示原型</p>
+  </footer>
+
+  <script src="js/charts.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/keystroke.js"></script>
+  <script src="js/mouse.js"></script>
+  <script src="js/wristband.js"></script>
+  <script src="js/health.js"></script>
+  <script src="js/alerts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
