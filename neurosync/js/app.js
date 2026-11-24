@@ -12,7 +12,8 @@ window.App = window.App || {};
       typing: function () { if (App.keystroke) App.keystroke.refresh(); },
       mouse: function () { if (App.mouse) App.mouse.refresh(); },
       wristband: function () { if (App.wristband) App.wristband.refresh(); },
-      settings: function () {}
+      settings: function () {},
+      about: function () {}
     };
     var tabs = document.querySelectorAll(".tab");
     tabs.forEach(function (tab) {

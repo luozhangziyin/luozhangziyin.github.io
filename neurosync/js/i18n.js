@@ -13,6 +13,7 @@ App.i18n = (function () {
       "nav.mouse": "鼠标震颤",
       "nav.wristband": "腕带监测",
       "nav.settings": "设置",
+      "nav.about": "关于",
 
       "overview.rhythmScore": "打字节律评分",
       "overview.tremorScore": "震颤稳定性评分",
@@ -180,7 +181,18 @@ App.i18n = (function () {
       "alert.sosCalledBtn": "✅ 已呼叫",
       "alert.sosDone": "请拨打急救电话并联系照护人。",
 
-      "footer.note": "NeuroSync · 数据仅保存在本机 · 演示原型"
+      "footer.note": "NeuroSync · 数据仅保存在本机 · 演示原型",
+
+      "about.title": "关于本项目",
+      "about.intro": "NeuroSync 是一个面向居家场景的神经运动早期监测原型，融合打字节律、鼠标微颤与腕带传感三大信号，实现无创、低成本的运动功能异常初筛。",
+      "about.team": "团队成员",
+      "about.teamSub": "清华大学国际本科新生 · 2026 未来健康创新挑战赛",
+      "about.bangladesh": "孟加拉国",
+      "about.uk": "英国",
+      "about.indonesia": "印度尼西亚",
+      "about.credits": "致谢",
+      "about.creditsText": "感谢清华大学及“未来健康创新挑战赛”组委会提供的平台与机会。",
+      "about.privacy": "所有数据仅保存在本机浏览器（localStorage），不上传任何服务器。"
     },
 
     en: {
@@ -193,6 +205,7 @@ App.i18n = (function () {
       "nav.mouse": "Mouse Tremor",
       "nav.wristband": "Wristband",
       "nav.settings": "Settings",
+      "nav.about": "About",
 
       "overview.rhythmScore": "Rhythm Score",
       "overview.tremorScore": "Tremor Stability",
@@ -360,7 +373,18 @@ App.i18n = (function () {
       "alert.sosCalledBtn": "✅ Called",
       "alert.sosDone": "Call emergency services and contact the caregiver.",
 
-      "footer.note": "NeuroSync · data stays local · demo prototype"
+      "footer.note": "NeuroSync · data stays local · demo prototype",
+
+      "about.title": "About the Project",
+      "about.intro": "NeuroSync is a home-oriented prototype for early neuro-motor screening, fusing keystroke rhythm, mouse micro-tremor and wristband sensing into one non-invasive, low-cost pipeline.",
+      "about.team": "The Team",
+      "about.teamSub": "International undergraduate freshmen at Tsinghua University · 2026 Future Health Innovation Challenge",
+      "about.bangladesh": "Bangladesh",
+      "about.uk": "United Kingdom",
+      "about.indonesia": "Indonesia",
+      "about.credits": "Credits",
+      "about.creditsText": "Thanks to Tsinghua University and the Future Health Innovation Challenge organizers for the platform and opportunity.",
+      "about.privacy": "All data stays in your browser (localStorage) — nothing is uploaded to a server."
     }
   };
 

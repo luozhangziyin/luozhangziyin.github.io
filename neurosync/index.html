@@ -36,6 +36,7 @@
     <button class="tab" data-tab="mouse" data-i18n="nav.mouse">鼠标震颤</button>
     <button class="tab" data-tab="wristband" data-i18n="nav.wristband">腕带监测</button>
     <button class="tab" data-tab="settings" data-i18n="nav.settings">设置</button>
+    <button class="tab" data-tab="about" data-i18n="nav.about">关于</button>
   </nav>
 
   <main id="main">
@@ -219,6 +220,29 @@
         <p class="muted" data-i18n="settings.about2">数据仅保存在本机浏览器 localStorage，不上传服务器。</p>
       </div>
           <div class="card"><h3 data-i18n="settings.emerg">紧急联系与提示通道</h3><div class="test-controls"><label><span data-i18n="settings.caregiver">照护人电话</span> <input id="cfgCaregiver" type="tel" placeholder="138xxxxxxxx"></label><label><span data-i18n="settings.emergency">急救电话</span> <input id="cfgEmergency" type="tel" value="120"></label><label><span data-i18n="settings.cueUUID">提示指令特征 UUID（可写）</span> <input id="cfgCueUUID" type="text" size="38"></label></div></div>
+    </section>
+
+    <!-- ============ 关于 ============ -->
+    <section class="view" id="view-about">
+      <div class="card">
+        <h3 data-i18n="about.title">关于本项目</h3>
+        <p class="muted" data-i18n="about.intro">NeuroSync 是一个面向居家场景的神经运动早期监测原型，融合打字节律、鼠标微颤与腕带传感三大信号，实现无创、低成本的运动功能异常初筛。</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="about.team">团队成员</h3>
+        <p class="muted" data-i18n="about.teamSub">清华大学国际本科新生 · 2026 未来健康创新挑战赛</p>
+        <ul class="team-list">
+          <li><span class="team-flag">🇧🇩</span><span class="team-name">Saraf</span><span class="team-country" data-i18n="about.bangladesh">孟加拉国</span></li>
+          <li><span class="team-flag">🇬🇧</span><span class="team-name">Ziyin Luo</span><span class="team-country" data-i18n="about.uk">英国</span></li>
+          <li><span class="team-flag">🇮🇩</span><span class="team-name">Evelyna</span><span class="team-country" data-i18n="about.indonesia">印度尼西亚</span></li>
+          <li><span class="team-flag">🇮🇩</span><span class="team-name">Benitta</span><span class="team-country" data-i18n="about.indonesia">印度尼西亚</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 data-i18n="about.credits">致谢</h3>
+        <p class="muted" data-i18n="about.creditsText">感谢清华大学及“未来健康创新挑战赛”组委会提供的平台与机会。</p>
+        <p class="muted" data-i18n="about.privacy">所有数据仅保存在本机浏览器（localStorage），不上传任何服务器。</p>
+      </div>
     </section>
 
   </main>
